@@ -1,0 +1,25 @@
+{
+  "name": "scumbag-steve-hat-pfp-tool",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite gh-pages"
+  },
+  "dependencies": {
+    "konva": "^9.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-konva": "^18.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.1",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vite-plugin-gh-pages": "^1.0.1"
+  }
+}

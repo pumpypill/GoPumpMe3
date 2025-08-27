@@ -1,0 +1,228 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #0f0f0f; /* Dark background */
+  color: #fff; /* White text */
+}
+
+/* Header */
+.header {
+  text-align: center;
+  background-color: #1a1a1a; /* Slightly lighter dark background */
+  padding: 16px;
+  border-bottom: 2px solid #00ff00; /* Bright green border */
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* Container */
+.container {
+  max-width: 500px;
+  width: 500px; /* Fix the width to prevent resizing */
+  margin: 0 auto;
+  background: #1a1a1a; /* Slightly lighter dark background */
+  border-radius: 16px; /* Rounded corners */
+  padding: 24px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold; /* Make the font bold */
+  background-color: #00ff00; /* Bright green */
+  color: #000; /* Black text */
+  border: none;
+  border-radius: 12px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #00cc00; /* Slightly darker green */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+button:disabled {
+  background-color: #333; /* Gray for disabled state */
+  color: #666; /* Lighter gray text */
+  cursor: not-allowed;
+}
+
+/* File input styling */
+input[type="file"] {
+  display: none; /* Hide the default file input */
+}
+
+label[for="file-upload"] {
+  display: inline-block;
+  background-color: #00ff00; /* Bright green */
+  color: #000; /* Black text */
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+label[for="file-upload"]:hover {
+  background-color: #00cc00; /* Slightly darker green */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+label[for="file-upload"]:active {
+  transform: scale(0.95); /* Slight shrink effect */
+}
+
+/* Inputs */
+input[type="range"] {
+  width: 100%; /* Ensure full width within its container */
+  max-width: 120px; /* Prevent resizing beyond this width */
+  margin-top: 8px;
+  appearance: none;
+  background: #333; /* Dark background for slider */
+  height: 6px;
+  border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #00ff00; /* Bright green thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #00ff00; /* Bright green thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  background: #00ff00; /* Bright green thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Canvas container */
+.canvas-container {
+  background: #000; /* Black background */
+  border-radius: 16px; /* Rounded corners */
+  margin-bottom: 16px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Tips */
+.tip {
+  color: #888; /* Gray text */
+  text-align: center;
+  margin-top: 24px;
+  font-size: 13px;
+}
+
+/* Layout for the tool and external buttons */
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically center the content */
+  gap: 24px;
+  padding: 16px;
+  flex-direction: row-reverse; /* Flip the columns */
+}
+
+/* External buttons container */
+.external-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #1a1a1a; /* Slightly lighter dark background */
+  padding: 16px;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  align-self: center; /* Ensure the buttons are vertically centered */
+}
+
+/* External buttons */
+.external-buttons button {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #00ff00; /* Bright green */
+  color: #000; /* Black text */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.external-buttons button:hover {
+  background-color: #00cc00; /* Slightly darker green */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.external-buttons button:active {
+  transform: scale(0.95); /* Slight shrink effect */
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: #1a1a1a; /* Slightly lighter dark background */
+  padding: 16px;
+  border-top: 2px solid #00ff00; /* Bright green border */
+  margin-top: 24px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #888; /* Gray text */
+}
+
+/* About Scumbag Steve */
+.about-scumbag-steve {
+  max-width: 800px;
+  margin: 24px auto;
+  background: #1a1a1a; /* Slightly lighter dark background */
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  color: #fff;
+}
+
+.about-scumbag-steve h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: #00ff00; /* Bright green */
+}
+
+.about-scumbag-steve p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.about-scumbag-steve ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.about-scumbag-steve ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
