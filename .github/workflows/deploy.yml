@@ -24,6 +24,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Clear gh-pages cache
+        run: rm -rf node_modules/.cache/gh-pages
+
       - name: Configure Git
         run: |
           git config --global user.name "GitHub Actions"
