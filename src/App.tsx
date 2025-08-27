@@ -39,7 +39,8 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <h1>Scumbag Steve hat PFP tool</h1>
+      <h1>Scumbag Steve Hat Tool</h1>
+      <p className="tagline">Add the Scumbag hat to any picture</p>
       <div className="container">
         <div style={{ marginBottom: 16 }}>
           <input
