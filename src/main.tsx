@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './styles.css';
 
-const Header: React.FC = () => (
-  <header className="header">
-    <h1>Steve&apos;s Scumbags Community</h1>
-    <p className="subheading">Join us in celebrating one of the internet's most iconic memes!</p>
-  </header>
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 );
 
 const Footer: React.FC = () => (
@@ -26,10 +26,6 @@ const AboutScumbagSteve: React.FC = () => (
       depict selfish or unethical behavior.
     </p>
     <p>
-      <strong>Why this tool?</strong> This tool allows you to add the iconic Scumbag Steve hat to any image,
-      letting you create your own personalized memes and share the fun with friends!
-    </p>
-    <p>
       <strong>Stats:</strong>
     </p>
     <ul>
@@ -38,6 +34,15 @@ const AboutScumbagSteve: React.FC = () => (
       <li>Featured in countless articles and internet culture discussions</li>
       <li>Blake Boston has over 100,000 followers on social media</li>
     </ul>
+  </div>
+);
+
+const WhyThisTool: React.FC = () => (
+  <div className="why-this-tool" style={{ maxWidth: 800, margin: '24px auto', background: '#1a1a1a', padding: 24, borderRadius: 12, boxShadow: '0px 4px 10px rgba(0,0,0,0.5)', color: '#fff' }}>
+    <p>
+      <strong>Why this tool?</strong> This tool allows you to add the iconic Scumbag Steve hat to any image,
+      letting you create your own personalized memes and share the fun with friends!
+    </p>
   </div>
 );
 
@@ -69,7 +74,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Header />
     <div className="layout">
       <ExternalButtons />
-      <App />
+      <div style={{ flex: 1 }}>
+        <WhyThisTool />
+        <App />
+      </div>
     </div>
     <AboutScumbagSteve />
     <Footer />
