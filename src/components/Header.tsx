@@ -5,7 +5,6 @@ const Header = () => {
     <header className="header">
       <h1>Steve's Scumbags Community</h1>
       <p>Join us in celebrating one of the internet's most iconic memes!</p>
-      <p>CA: Ceeu2zv9wbgipjrFiCz1rf8XYRWzmw22LJHJ9k3XBAGS</p>
     </header>
   );
 };

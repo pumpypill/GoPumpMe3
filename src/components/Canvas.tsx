@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 interface HatPosition {
   x: number;
@@ -20,7 +20,7 @@ const Canvas: React.FC<CanvasProps> = ({
   image, hat, hatPosition, setHatPosition, width, height 
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const dragging = useRef(false);
+  const [dragging, setDragging] = useState(false); // Replace useRef with useState
   const lastPos = useRef({ x: 0, y: 0 });
 
   // Draw the preview
@@ -70,16 +70,16 @@ const Canvas: React.FC<CanvasProps> = ({
   }, [image, hat, hatPosition]);
 
   const onCanvasMouseDown = (e: React.MouseEvent) => {
-    dragging.current = true;
+    setDragging(true); // Update state
     lastPos.current = { x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY };
   };
 
   const onCanvasMouseUp = () => { 
-    dragging.current = false; 
+    setDragging(false); // Update state
   };
 
   const onCanvasMouseMove = (e: React.MouseEvent) => {
-    if (!dragging.current) return;
+    if (!dragging) return; // Use state
     const dx = e.nativeEvent.offsetX - lastPos.current.x;
     const dy = e.nativeEvent.offsetY - lastPos.current.y;
     setHatPosition(pos => ({
@@ -96,9 +96,9 @@ const Canvas: React.FC<CanvasProps> = ({
       width={width}
       height={height}
       style={{ 
-        width, 
-        height, 
-        cursor: dragging.current ? 'grabbing' : 'grab', 
+        width: width * 0.75, 
+        height: height * 0.75, 
+        cursor: dragging ? 'grabbing' : 'grab', // Use state
         background: '#222' 
       }}
       onMouseDown={onCanvasMouseDown}

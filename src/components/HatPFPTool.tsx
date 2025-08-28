@@ -1,77 +1,62 @@
-import React, { useRef, useState } from 'react';
-import scumbagHat from './assets/scumbag-hat.png';
-import Canvas from './components/Canvas';
-import './styles.css';
+import React, { useState } from 'react';
+import Canvas from './Canvas';
 
-const App: React.FC = () => {
-  const [image, setImage] = useState<string | null>(null);
+const HatPFPTool = () => {
+  const [image, setImage] = useState(null);
   const [hatPosition, setHatPosition] = useState({ x: 100, y: 40, scale: 1, rotation: 0 });
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
     if (!file) return;
-
     if (!file.type.match('image.*')) {
       alert('Please select an image file');
       return;
     }
-
     const reader = new FileReader();
-    reader.onload = (ev) => setImage(ev.target?.result as string);
+    reader.onload = (e) => setImage(e.target.result);
     reader.onerror = () => alert('Error reading file');
     reader.readAsDataURL(file);
   };
 
   const handleDownload = () => {
     const canvas = document.querySelector('canvas');
-    if (!canvas) return;
-
-    try {
+    if (canvas) {
       const link = document.createElement('a');
-      link.download = `scumbag-steve-pfp.png`;
-      link.href = canvas.toDataURL('image/png');
+      link.download = 'scumbag-steve-pfp.png';
+      link.href = canvas.toDataURL();
       link.click();
-    } catch (error) {
-      console.error('Download failed:', error);
-      alert('Failed to download image');
     }
   };
 
   return (
     <div>
-      <h1>Hat Tool - Add The Scumbag Hat to Any Picture</h1>
-      <p className="tagline">Create your own Scumbag Steve memes by adding the iconic hat to any picture!</p>
+      <h1>Scumbag Steve hat PFP tool</h1>
       <div className="container">
         <div style={{ marginBottom: 16 }}>
-          <input
-            type="file"
-            id="file-upload"
-            accept="image/*"
-            onChange={handleImageUpload}
-          />
+          <input type="file" id="file-upload" accept="image/*" onChange={handleFileUpload} />
           <label htmlFor="file-upload">Choose File</label>
         </div>
         <div style={{ marginBottom: 16, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
           <label>
-            Size:&nbsp;
+            Size: 
             <input
               type="range"
               min={0.2}
               max={2}
               step={0.01}
               value={hatPosition.scale}
-              onChange={e => setHatPosition(pos => ({ ...pos, scale: Number(e.target.value) }))}
+              onChange={(e) => setHatPosition((prev) => ({ ...prev, scale: Number(e.target.value) }))}
             />
           </label>
           <label>
-            Rotation:&nbsp;
+            Rotation: 
             <input
               type="range"
               min={-180}
               max={180}
               step={1}
               value={hatPosition.rotation}
-              onChange={e => setHatPosition(pos => ({ ...pos, rotation: Number(e.target.value) }))}
+              onChange={(e) => setHatPosition((prev) => ({ ...prev, rotation: Number(e.target.value) }))}
             />
             <span>{hatPosition.rotation}°</span>
           </label>
@@ -80,7 +65,7 @@ const App: React.FC = () => {
           {image ? (
             <Canvas
               image={image}
-              hat={scumbagHat}
+              hat="/assets/scumbag-hat.png"
               hatPosition={hatPosition}
               setHatPosition={setHatPosition}
               width={400}
@@ -88,10 +73,7 @@ const App: React.FC = () => {
               aria-label="Image editing canvas for Scumbag Steve PFP tool"
             />
           ) : (
-            <div
-              style={{ height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              aria-label="Placeholder canvas area"
-            >
+            <div style={{ height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center' }} aria-label="Placeholder canvas area">
               <p>Upload an image to start</p>
             </div>
           )}
@@ -107,4 +89,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default HatPFPTool;
