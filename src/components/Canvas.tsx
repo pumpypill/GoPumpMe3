@@ -96,8 +96,8 @@ const Canvas: React.FC<CanvasProps> = ({
       width={width}
       height={height}
       style={{ 
-        width: width * 0.75, 
-        height: height * 0.75, 
+        width, 
+        height, 
         cursor: dragging.current ? 'grabbing' : 'grab', 
         background: '#222' 
       }}

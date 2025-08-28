@@ -71,6 +71,7 @@ const ExternalButtons: React.FC = () => (
 
 const App: React.FC = () => {
   const [image, setImage] = useState<string | null>(null);
+  const [imageSize, setImageSize] = useState<{ width: number; height: number } | null>(null);
   const [hatPosition, setHatPosition] = useState({ x: 100, y: 40, scale: 1, rotation: 0 });
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -83,7 +84,14 @@ const App: React.FC = () => {
     }
 
     const reader = new FileReader();
-    reader.onload = (ev) => setImage(ev.target?.result as string);
+    reader.onload = (ev) => {
+      const img = new window.Image();
+      img.onload = () => {
+        setImageSize({ width: img.naturalWidth, height: img.naturalHeight });
+        setImage(ev.target?.result as string);
+      };
+      img.src = ev.target?.result as string;
+    };
     reader.onerror = () => alert('Error reading file');
     reader.readAsDataURL(file);
   };
@@ -148,14 +156,14 @@ const App: React.FC = () => {
               </label>
             </div>
             <div className="canvas-container">
-              {image ? (
+              {image && imageSize ? (
                 <Canvas
                   image={image}
                   hat={scumbagHat}
                   hatPosition={hatPosition}
                   setHatPosition={setHatPosition}
-                  width={400}
-                  height={400}
+                  width={imageSize.width}
+                  height={imageSize.height}
                   aria-label="Image editing canvas for Scumbag Steve PFP tool"
                 />
               ) : (
