@@ -39,7 +39,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <h1>Scumbag Steve Hat Tool</h1>
+      <h1>Hat Tool - Add The Scumbag Hat to Any Picture</h1>
       <p className="tagline">Create your own Scumbag Steve memes by adding the iconic hat to any picture!</p>
       <div className="container">
         <div style={{ marginBottom: 16 }}>

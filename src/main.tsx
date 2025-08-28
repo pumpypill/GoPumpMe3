@@ -5,7 +5,7 @@ import './styles.css';
 
 const Header: React.FC = () => (
   <header className="header">
-    <h1>Welcome to the Scumbag Steve Community</h1>
+    <h1>Steve&apos;s Scumbags Community</h1>
     <p className="subheading">Join us in celebrating one of the internet's most iconic memes!</p>
   </header>
 );
