@@ -229,15 +229,15 @@ input[type="range"]::-ms-thumb {
 
 /* Subheading */
 .subheading {
-  font-size: 0.9rem;
-  color: #888; /* Gray text */
+  font-size: 1rem;
+  color: #aaa; /* Light gray text */
   margin-top: 8px;
 }
 
 /* Tagline */
 .tagline {
   text-align: center;
-  font-size: 1rem;
-  color: #888; /* Gray text */
+  font-size: 1.1rem;
+  color: #ccc; /* Light gray text */
   margin-bottom: 16px;
 }

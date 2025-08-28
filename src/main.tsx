@@ -5,14 +5,14 @@ import './styles.css';
 
 const Header: React.FC = () => (
   <header className="header">
-    <h1>Scumbag Steve Community</h1>
-    <p className="subheading">CA: Ceeu2zv9wbgipjrFiCz1rf8XYRWzmw22LJHJ9k3XBAGS</p>
+    <h1>Welcome to the Scumbag Steve Community</h1>
+    <p className="subheading">Join us in celebrating one of the internet's most iconic memes!</p>
   </header>
 );
 
 const Footer: React.FC = () => (
   <footer className="footer">
-    <p>© {new Date().getFullYear()} Scumbag Steve. All rights reserved.</p>
+    <p>© {new Date().getFullYear()} Scumbag Steve Community. Built with love for meme culture.</p>
   </footer>
 );
 
@@ -24,6 +24,10 @@ const AboutScumbagSteve: React.FC = () => (
       also known as "Weezy B." The image features him wearing a sideways baseball cap and a fur-lined jacket,
       giving off a stereotypical "scumbag" vibe. The meme became popular in 2011 and has been used to humorously
       depict selfish or unethical behavior.
+    </p>
+    <p>
+      <strong>Why this tool?</strong> This tool allows you to add the iconic Scumbag Steve hat to any image,
+      letting you create your own personalized memes and share the fun with friends!
     </p>
     <p>
       <strong>Stats:</strong>
