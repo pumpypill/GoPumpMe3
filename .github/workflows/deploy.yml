@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+# Set permissions needed for GitHub Pages deployment
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -33,3 +37,4 @@ jobs:
           folder: dist # Change this if your build output directory is different
           branch: gh-pages
           clean: true # This ensures old files are removed
+          token: ${{ github.token }} # Explicitly use the GitHub token
