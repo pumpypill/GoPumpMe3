@@ -22,7 +22,6 @@ const AboutScumbagSteve = () => {
         listStyleType: 'none',
         padding: 0,
         textAlign: 'left', // Align stats to the left for better readability
-        margin: '0 auto', // Center the list within the container
         maxWidth: '600px' // Limit the width of the stats section
       }}>
         <li style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>First appearance: 2011</li>
