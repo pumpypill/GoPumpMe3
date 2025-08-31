@@ -4,6 +4,7 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: #0f0f0f; /* Dark background */
   color: #fff; /* White text */
+  line-height: 1.6; /* Improve text readability */
 }
 
 /* Header */
@@ -16,8 +17,13 @@ body {
 
 .header h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.5rem; /* Larger font for better visibility */
   color: #fff;
+}
+
+.header p {
+  font-size: 1.2rem; /* Add consistent font size for subheading */
+  color: #ccc; /* Light gray for better contrast */
 }
 
 /* Container */
@@ -132,7 +138,7 @@ input[type="range"]::-ms-thumb {
   color: #888; /* Gray text */
   text-align: center;
   margin-top: 24px;
-  font-size: 13px;
+  font-size: 1rem; /* Adjust font size for better readability */
 }
 
 /* Layout for the tool and external buttons */
@@ -190,7 +196,7 @@ input[type="range"]::-ms-thumb {
 
 .footer p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1rem; /* Consistent font size */
   color: #888; /* Gray text */
 }
 
@@ -206,13 +212,13 @@ input[type="range"]::-ms-thumb {
 }
 
 .about-scumbag-steve h2 {
-  font-size: 1.5rem;
+  font-size: 2rem; /* Larger heading for emphasis */
   margin-bottom: 16px;
   color: #00ff00; /* Bright green */
 }
 
 .about-scumbag-steve p {
-  font-size: 1rem;
+  font-size: 1.1rem; /* Slightly larger font for readability */
   line-height: 1.6;
   margin-bottom: 16px;
 }
@@ -224,7 +230,7 @@ input[type="range"]::-ms-thumb {
 
 .about-scumbag-steve ul li {
   margin-bottom: 8px;
-  font-size: 1rem;
+  font-size: 1.1rem; /* Match paragraph font size */
 }
 
 /* Subheading */
@@ -237,7 +243,7 @@ input[type="range"]::-ms-thumb {
 /* Tagline */
 .tagline {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Slightly larger font for better emphasis */
   color: #ccc; /* Light gray text */
   margin-bottom: 16px;
 }

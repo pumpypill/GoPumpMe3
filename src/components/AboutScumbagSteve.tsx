@@ -4,11 +4,13 @@ const AboutScumbagSteve = () => {
   return (
     <div className="about-container" style={{
       backgroundColor: '#1a1a1a',
-      padding: '1.5rem',
+      padding: '2rem',
       borderRadius: '8px',
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-      marginTop: '2rem',
-      color: '#fff'
+      margin: '2rem auto',
+      color: '#fff',
+      maxWidth: '800px', // Set a maximum width for better readability
+      width: '90%', // Ensure responsiveness on smaller screens
     }}>
       <h2 style={{ fontSize: '2rem', color: '#00ff00', marginBottom: '1rem' }}>Who is Scumbag Steve?</h2>
       <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
@@ -16,7 +18,13 @@ const AboutScumbagSteve = () => {
       </p>
       
       <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Stats:</h3>
-      <ul style={{ listStyleType: 'none', padding: 0 }}>
+      <ul style={{
+        listStyleType: 'none',
+        padding: 0,
+        textAlign: 'left', // Align stats to the left for better readability
+        margin: '0 auto', // Center the list within the container
+        maxWidth: '600px' // Limit the width of the stats section
+      }}>
         <li style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>First appearance: 2011</li>
         <li style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Over 1 million meme variations created</li>
         <li style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Featured in countless articles and internet culture discussions</li>

@@ -48,8 +48,9 @@ const App: React.FC = () => {
             id="file-upload"
             accept="image/*"
             onChange={handleImageUpload}
+            aria-label="Upload an image file"
           />
-          <label htmlFor="file-upload">Choose File</label>
+          <label htmlFor="file-upload" aria-label="Choose an image file to upload">Choose File</label>
         </div>
         <div style={{ marginBottom: 16, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
           <label>
@@ -60,7 +61,8 @@ const App: React.FC = () => {
               max={2}
               step={0.01}
               value={hatPosition.scale}
-              onChange={e => setHatPosition(pos => ({ ...pos, scale: Number(e.target.value) }))}
+              onChange={(e) => setHatPosition((prev) => ({ ...prev, scale: Number(e.target.value) }))}
+              aria-label="Adjust the size of the hat"
             />
           </label>
           <label>
@@ -71,7 +73,8 @@ const App: React.FC = () => {
               max={180}
               step={1}
               value={hatPosition.rotation}
-              onChange={e => setHatPosition(pos => ({ ...pos, rotation: Number(e.target.value) }))}
+              onChange={(e) => setHatPosition((prev) => ({ ...prev, rotation: Number(e.target.value) }))}
+              aria-label="Adjust the rotation of the hat"
             />
             <span>{hatPosition.rotation}°</span>
           </label>
@@ -96,7 +99,7 @@ const App: React.FC = () => {
             </div>
           )}
         </div>
-        <button onClick={handleDownload} disabled={!image}>
+        <button onClick={handleDownload} disabled={!image} aria-label="Download the edited image">
           Download Scumbag PFP
         </button>
       </div>
