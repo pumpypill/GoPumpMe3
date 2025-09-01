@@ -10,6 +10,15 @@ const Header: React.FC = () => (
     <a href="/" aria-label="Go to homepage">
       <img src={logo} alt="Scumbag Steve Logo" style={{ height: 64, width: 64 }} />
     </a>
+    <nav className="menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#about-scumbag-steve">About</a></li>
+        <li><a href="#steve-memecoin">Memecoin</a></li>
+        <li><a href="#who-is-scumbag-steve">Meet Steve</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 );
 

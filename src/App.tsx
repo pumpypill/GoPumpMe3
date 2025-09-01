@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ExternalButtons from './components/ExternalButtons';
 import Canvas from './components/Canvas';
 import scumbagHat from './assets/scumbag-hat.png';
 import './styles.css';
@@ -110,11 +109,16 @@ const App: React.FC = () => {
                 </div>
               )}
             </div>
-            <button onClick={handleDownload} disabled={!image} aria-label="Download the edited image">
+            <button
+              onClick={handleDownload}
+              disabled={!image}
+              aria-label="Download the edited image"
+              className="button-spacing"
+              style={{ marginTop: 24 }}
+            >
               Download Scumbag PFP
             </button>
           </div>
-          <ExternalButtons />
         </div>
         <div className="tip">
           <p>Tip: Drag the hat to position it. Use the sliders to resize and rotate.</p>
@@ -123,5 +127,4 @@ const App: React.FC = () => {
     </div>
   );
 };
-
 export default App;

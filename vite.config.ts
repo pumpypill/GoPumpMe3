@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react';
 // Set base path for GitHub Pages deployment
 export default defineConfig({
   plugins: [react()],
-  base: '/steve-hat-gen/' // Replace 'steve-hat-gen' with your repository name if different
+  base: '/steve-hat-gen/' // Replace with your repository name
 });

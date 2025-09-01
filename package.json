@@ -2,6 +2,7 @@
   "name": "scumbag-steve-hat-pfp-tool",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://i2gucci.github.io/steve-hat-gen",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

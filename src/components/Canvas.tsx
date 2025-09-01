@@ -111,11 +111,11 @@ const Canvas: React.FC<CanvasProps> = ({
   return (
     <canvas
       ref={canvasRef}
-      width={width}
-      height={height}
+      width={width} // Explicitly set the width
+      height={height} // Explicitly set the height
       style={{
-        width: width * 0.75,
-        height: height * 0.75,
+        width: `${width}px`, // Ensure consistent rendering
+        height: `${height}px`,
         cursor: dragging.current ? 'grabbing' : 'grab',
         background: '#222',
       }}

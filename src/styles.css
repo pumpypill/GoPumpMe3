@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
@@ -25,6 +24,35 @@ body {
 .header p {
   font-size: 1rem;
   color: #ccc;
+}
+
+/* Menu */
+.menu {
+  margin-top: 16px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  display: inline;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #00ff00;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #0c0;
 }
 
 /* Container */
@@ -169,40 +197,6 @@ input[type="range"]::-ms-thumb {
   flex-direction: row-reverse; /* Flip the columns */
 }
 
-/* External buttons container */
-.external-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  background: #1a1a1a; /* Slightly lighter dark background */
-  padding: 16px;
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
-  align-self: center; /* Ensure the buttons are vertically centered */
-}
-
-/* External buttons */
-.external-buttons button {
-  padding: 10px 16px;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: #00ff00; /* Bright green */
-  color: #000; /* Black text */
-  border: none;
-  border-radius: 8px; /* Rounded corners */
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.external-buttons button:hover {
-  background-color: #00cc00; /* Slightly darker green */
-  transform: scale(1.05); /* Slight zoom effect */
-}
-
-.external-buttons button:active {
-  transform: scale(0.95); /* Slight shrink effect */
-}
-
 /* Footer */
 .footer {
   text-align: center;
@@ -266,6 +260,11 @@ input[type="range"]::-ms-thumb {
   margin-bottom: 16px;
 }
 
+/* Spacing for buttons */
+.button-spacing {
+  margin-top: 24px; /* Add spacing above the button */
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .header h1 {
@@ -293,6 +292,37 @@ input[type="range"]::-ms-thumb {
     margin-top: 16px; /* Add spacing between the tool and buttons */
   }
 }
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.2rem;
+  }
+
+  .header p {
+    font-size: 0.8rem;
+  }
+
+  .container {
+    padding: 8px;
+  }
+}
+
+.padding {
+  padding: 12px;
+}
+
+  .canvas-container {
+    max-width: 100%;
+  }
+
+  .tool-container {
+    flex-direction: column; /* Stack the tool and buttons vertically */
+    align-items: center;   /* Center-align the content */
+  }
+
+  .buttons-container {
+    margin-top: 16px; /* Add spacing between the tool and buttons */
+  }
 
 @media (max-width: 480px) {
   .header h1 {
