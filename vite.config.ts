@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+// Set base path for GitHub Pages deployment
 export default defineConfig({
   plugins: [react()],
-  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
-  base: process.env.BASE_PATH || '/steve-hat-gen/', // Use environment variable with fallback
+  base: '/steve-hat-gen/' // Replace 'steve-hat-gen' with your repository name if different
 });

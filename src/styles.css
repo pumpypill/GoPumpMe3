@@ -1,40 +1,55 @@
-/* General styles */
+
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #0f0f0f; /* Dark background */
-  color: #fff; /* White text */
-  line-height: 1.6; /* Improve text readability */
+  background-color: #0f0f0f;
+  color: #fff;
+  background-image: url('/src/assets/bg-pattern.png');
+  background-repeat: repeat;
+  background-size: auto;
 }
 
 /* Header */
 .header {
   text-align: center;
-  background-color: #1a1a1a; /* Slightly lighter dark background */
+  background-color: #1a1a1a;
   padding: 16px;
-  border-bottom: 2px solid #00ff00; /* Bright green border */
+  border-bottom: 2px solid #00ff00;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 2.5rem; /* Larger font for better visibility */
-  color: #fff;
+  font-size: 2rem;
 }
 
 .header p {
-  font-size: 1.2rem; /* Add consistent font size for subheading */
-  color: #ccc; /* Light gray for better contrast */
+  font-size: 1rem;
+  color: #ccc;
 }
 
 /* Container */
 .container {
-  max-width: 500px;
-  width: 500px; /* Fix the width to prevent resizing */
+  max-width: 90%;
   margin: 0 auto;
-  background: #1a1a1a; /* Slightly lighter dark background */
-  border-radius: 16px; /* Rounded corners */
-  padding: 24px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Container for the tool and buttons */
+.tool-container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Buttons container */
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 /* Buttons */
@@ -131,6 +146,9 @@ input[type="range"]::-ms-thumb {
   margin-bottom: 16px;
   text-align: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 /* Tips */
@@ -246,4 +264,46 @@ input[type="range"]::-ms-thumb {
   font-size: 1.2rem; /* Slightly larger font for better emphasis */
   color: #ccc; /* Light gray text */
   margin-bottom: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 12px;
+  }
+
+  .canvas-container {
+    max-width: 100%;
+  }
+
+  .tool-container {
+    flex-direction: column; /* Stack the tool and buttons vertically */
+    align-items: center;   /* Center-align the content */
+  }
+
+  .buttons-container {
+    margin-top: 16px; /* Add spacing between the tool and buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.2rem;
+  }
+
+  .header p {
+    font-size: 0.8rem;
+  }
+
+  .container {
+    padding: 8px;
+  }
 }

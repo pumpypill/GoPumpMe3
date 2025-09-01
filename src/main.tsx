@@ -2,19 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './styles.css';
-import ExternalButtons from './components/ExternalButtons';
-import AboutScumbagSteve from './components/AboutScumbagSteve'; // Import the component
+import AboutScumbagSteve from './components/AboutScumbagSteve';
+import logo from './assets/logo.png';
 
 const Header: React.FC = () => (
   <header className="header">
-    <h1>Steve&apos;s Scumbags Community</h1>
-    <p className="subheading">Join us in celebrating one of the internet's most iconic memes!</p>
+    <a href="/" aria-label="Go to homepage">
+      <img src={logo} alt="Scumbag Steve Logo" style={{ height: 64, width: 64 }} />
+    </a>
   </header>
 );
 
 const Footer: React.FC = () => (
   <footer className="footer">
-    <p>© {new Date().getFullYear()} Scumbag Steve Community. Built with love for meme culture.</p>
+    <p>© {new Date().getFullYear()} STEVE on Bags App. Built in collaboration with Blake Boston.</p>
   </footer>
 );
 
@@ -22,10 +23,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Header />
     <div className="layout">
-      <ExternalButtons />
       <App />
     </div>
-    <AboutScumbagSteve /> {/* Use the imported component */}
+    <AboutScumbagSteve />
     <Footer />
   </React.StrictMode>
 );

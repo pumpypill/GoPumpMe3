@@ -14,14 +14,17 @@ interface CanvasProps {
   setHatPosition: React.Dispatch<React.SetStateAction<HatPosition>>;
   width: number;
   height: number;
+  'aria-label'?: string;
 }
 
+const MAX_IMG_SIZE = 400;
+
 const Canvas: React.FC<CanvasProps> = ({ 
-  image, hat, hatPosition, setHatPosition, width, height 
+  image, hat, hatPosition, setHatPosition, width, height, ...props 
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [dragging, setDragging] = useState(false); // Replace useRef with useState
-  const lastPos = useRef({ x: 0, y: 0 });
+  const dragging = useRef(false);
+  const dragStart = useRef({ x: 0, y: 0 });
 
   // Draw the preview
   useEffect(() => {
@@ -30,17 +33,32 @@ const Canvas: React.FC<CanvasProps> = ({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const baseImg = new window.Image();
-    baseImg.src = image;
-    baseImg.onload = () => {
-      // Clear
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      // Draw subject image
-      ctx.drawImage(baseImg, 0, 0, canvas.width, canvas.height);
+    const img = new window.Image();
+    img.src = image;
+    img.onload = () => {
+      // Calculate scaling to fit within MAX_IMG_SIZE, preserving aspect ratio
+      let drawWidth = img.width;
+      let drawHeight = img.height;
+      let offsetX = 0;
+      let offsetY = 0;
 
+      if (drawWidth > MAX_IMG_SIZE || drawHeight > MAX_IMG_SIZE) {
+        const scale = Math.min(MAX_IMG_SIZE / drawWidth, MAX_IMG_SIZE / drawHeight);
+        drawWidth = Math.round(drawWidth * scale);
+        drawHeight = Math.round(drawHeight * scale);
+      }
+
+      // Center the image in the canvas
+      offsetX = Math.floor((width - drawWidth) / 2);
+      offsetY = Math.floor((height - drawHeight) / 2);
+
+      ctx.clearRect(0, 0, width, height);
+      ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+
+      // Draw the hat
       const hatImg = new window.Image();
       hatImg.crossOrigin = 'anonymous';
-      hatImg.src = hat;
+      hatImg.src = hat; // props.hat is the imported asset URL
       hatImg.onload = () => {
         // Save context state
         ctx.save();
@@ -63,31 +81,31 @@ const Canvas: React.FC<CanvasProps> = ({
         alert('Error: Unable to load the hat image.');
       };
     };
-    baseImg.onerror = () => {
+    img.onerror = () => {
       console.error('Failed to load the background image.');
       alert('Error: Unable to load the background image.');
     };
-  }, [image, hat, hatPosition]);
+  }, [image, hat, hatPosition, width, height]);
 
   const onCanvasMouseDown = (e: React.MouseEvent) => {
-    setDragging(true); // Update state
-    lastPos.current = { x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY };
+    dragging.current = true;
+    dragStart.current = { x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY };
   };
 
   const onCanvasMouseUp = () => { 
-    setDragging(false); // Update state
+    dragging.current = false;
   };
 
   const onCanvasMouseMove = (e: React.MouseEvent) => {
-    if (!dragging) return; // Use state
-    const dx = e.nativeEvent.offsetX - lastPos.current.x;
-    const dy = e.nativeEvent.offsetY - lastPos.current.y;
+    if (!dragging.current) return;
+    const dx = e.nativeEvent.offsetX - dragStart.current.x;
+    const dy = e.nativeEvent.offsetY - dragStart.current.y;
     setHatPosition(pos => ({
       ...pos,
       x: pos.x + dx,
       y: pos.y + dy
     }));
-    lastPos.current = { x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY };
+    dragStart.current = { x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY };
   };
 
   return (
@@ -95,12 +113,13 @@ const Canvas: React.FC<CanvasProps> = ({
       ref={canvasRef}
       width={width}
       height={height}
-      style={{ 
-        width: width * 0.75, 
-        height: height * 0.75, 
-        cursor: dragging ? 'grabbing' : 'grab', // Use state
-        background: '#222' 
+      style={{
+        width: width * 0.75,
+        height: height * 0.75,
+        cursor: dragging.current ? 'grabbing' : 'grab',
+        background: '#222',
       }}
+      {...props}
       onMouseDown={onCanvasMouseDown}
       onMouseUp={onCanvasMouseUp}
       onMouseLeave={onCanvasMouseUp}
@@ -110,3 +129,4 @@ const Canvas: React.FC<CanvasProps> = ({
 };
 
 export default Canvas;
+// (No import typos found. Ensure this file is imported as './components/Canvas' in other files.)
