@@ -3,33 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <!-- Favicons for various devices/platforms -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/GoPumpMe/assets/example-vRi2sy8p.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/GoPumpMe/assets/example-vRi2sy8p.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/example.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/example.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoPumpMe</title>
     <meta name="description" content="Create your own meme by placing a hat or other overlay on any picture." />
-    <style>
-      .banner {
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-      }
-      .copy-icon {
-        width: 16px;
-        height: 16px;
-        background: url('/GoPumpMe/assets/copy-icon-8yPggIa9.png') no-repeat center center;
-        background-size: contain;
-      }
-    </style>
-    <script type="module" crossorigin src="/GoPumpMe/assets/index-p9Ta1g8p.js"></script>
-    <link rel="stylesheet" crossorigin href="/GoPumpMe/assets/index-k5cQJsLS.css">
+    <script type="module" crossorigin src="/GoPumpMe2/assets/index-Gp39DOiv.js"></script>
+    <link rel="stylesheet" crossorigin href="/GoPumpMe2/assets/index-kGreButb.css">
   </head>
   <body>
     <div class="banner" onclick="copyToClipboard()">
       <strong id="banner-text">LIVE ON PUMP.FUN</strong>
       <span class="copy-icon" aria-label="Copy to clipboard"></span>
+    </div>
+    <div id="root"></div>
+    <script>
+      function copyToClipboard() {
+        const text = document.getElementById('banner-text').innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert('Copied to clipboard!');
+        }).catch(err => {
+          console.error('Failed to copy text: ', err);
+        });
+      }
+    </script>
+  </body>
+</html>
     </div>
     <div id="root"></div>
     <script>

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+// Ensure React is imported for JSX to work correctly
 import Notification from './Notification';
 
 // Remove the entire ContractBanner component as shown in the image (the green contract address banner).
