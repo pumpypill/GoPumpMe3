@@ -3,13 +3,21 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/GoPumpMe3/', // <-- Add this line for GitHub Pages
+  base: '/GoPumpMe3/', // <-- Ensure this matches your GitHub Pages repository name exactly
   plugins: [react()],
   server: {
-    port: 3000, // You can change the port if needed
+    port: 3000,
   },
   build: {
-    outDir: 'dist', // Output directory for production build
-    assetsDir: 'assets', // Ensure assets are placed in the correct folder
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true, // Add source maps for better debugging
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+        },
+      },
+    },
   },
 });
