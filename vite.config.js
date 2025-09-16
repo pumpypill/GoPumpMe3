@@ -9,9 +9,11 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true, // Clear the output directory before building
+    target: 'esnext',
     rollupOptions: {
       output: {
-        manualChunks: undefined, // Helps with code splitting
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name.split('.');
           const ext = info[info.length - 1];

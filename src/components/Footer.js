@@ -1,3 +1,0 @@
-import { jsxs as _jsxs, jsx as _jsx } from "react/jsx-runtime";
-const Footer = () => (_jsx("footer", { className: "footer", style: { textAlign: 'center', padding: '16px 8px' }, children: _jsxs("div", { style: { maxWidth: '700px', margin: '0 auto' }, children: [_jsxs("p", { style: { fontSize: '1rem', margin: '0 0 8px 0' }, children: ["\u00A9 ", new Date().getFullYear(), " GoPumpMe - Making Every Trade Count"] }), _jsx("p", { style: { fontSize: '0.85rem', margin: '0', color: 'var(--text-light)' }, children: "GoPumpMe donates pump.fun creator rewards to GoFundMe campaigns. Join us in making a difference!" })] }) }));
-export default Footer;

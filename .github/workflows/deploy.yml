@@ -26,15 +26,16 @@ jobs:
       run: npm ci || npm install
 
     - name: Build project
-      env:
-        VITE_BASE: './' # Explicitly set the base path for Vite
       run: npm run build
 
     - name: Prepare deployment
       run: |
-        mkdir -p dist # Ensure the dist directory exists
+        mkdir -p dist
         cp public/404.html dist/ || echo "No 404.html found in public directory"
-        touch dist/.nojekyll # Prevent Jekyll processing on GitHub Pages
+        cp public/_headers dist/ || echo "No _headers found in public directory"
+        touch dist/.nojekyll
+        echo "*.js" > dist/.gitattributes
+        echo "text/javascript" >> dist/.gitattributes
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
