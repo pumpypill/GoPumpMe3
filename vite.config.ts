@@ -11,5 +11,5 @@ export default defineConfig({
       input: './index.html', // Main entry point
     },
   },
-  base: './', // Use relative paths for all assets
+  base: '/GoPumpMe/', // <-- Set to your repo name for GitHub Pages
 });
