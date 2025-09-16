@@ -78,6 +78,16 @@ const Header: React.FC = () => {
           Trade on Axiom
         </a>
         
+        {/* Learn More Button */}
+        <a
+          href="https://pump.fun/coin/6v4NsMMfxv7YVLb5s91fDz59yH1aNRsKSGS6y1oxpump"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="trade-button"
+        >
+          Learn More
+        </a>
+        
         {/* Social Media Icon */}
         <a 
           href="https://x.com/gopumpmedotfun" 
@@ -125,6 +135,16 @@ const Header: React.FC = () => {
               onClick={() => setMenuOpen(false)}
             >
               Community
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://pump.fun/coin/6v4NsMMfxv7YVLb5s91fDz59yH1aNRsKSGS6y1oxpump"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+            >
+              Learn More
             </a>
           </li>
         </ul>

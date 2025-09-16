@@ -13,6 +13,7 @@ const AboutSection: React.FC = () => (
       <li>Transparent donations and community-driven selection</li>
       <li>Join us to pump for good!</li>
     </ul>
+    <a href="#how-it-works" className="cta-btn">How It Works</a>
   </section>
 );
 
