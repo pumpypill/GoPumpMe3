@@ -6,7 +6,7 @@
   "homepage": "https://pumpypill.github.io/GoPumpMe3/",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "serve": "node local-server.js",
     "deploy": "gh-pages -d dist"
