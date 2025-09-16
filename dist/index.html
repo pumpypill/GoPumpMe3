@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoPumpMe</title>
     <meta name="description" content="Create your own meme by placing a hat or other overlay on any picture." />
-    <script type="module" crossorigin src="/GoPumpMe2/assets/index-Gp39DOiv.js"></script>
-    <link rel="stylesheet" crossorigin href="/GoPumpMe2/assets/index-kGreButb.css">
+    <script type="module" crossorigin src="/assets/index-CPhrelME.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-kGreButb.css">
   </head>
   <body>
     <div class="banner" onclick="copyToClipboard()">
@@ -26,15 +26,15 @@
           console.error('Failed to copy text: ', err);
         });
       }
-    </script>
+    </script>
+    
+    <!-- Choose one of these script options: -->
+    <!-- Option 1: For local development with Vite -->
+    
+    <!-- Option 2: For testing built files locally -->
+    <!-- <script type="module" src="./dist/assets/index-Gp39DOiv.js"></script> -->
   </body>
 </html>
-    </div>
-    <div id="root"></div>
-    <script>
-      function copyToClipboard() {
-        const text = document.getElementById('banner-text').innerText;
-        navigator.clipboard.writeText(text).then(() => {
           alert('Copied to clipboard!');
         }).catch(err => {
           console.error('Failed to copy text: ', err);

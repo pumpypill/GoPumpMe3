@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import logo from '../assets/example.png';
-import logoDark from '../assets/example_dark.png'; // Ensure this file exists
+import logoDark from '../assets/example_dark.png';
 import hamburgerIcon from '../assets/hamburger.png';
 import socialMediaIcon from '../assets/social-media.png';
 

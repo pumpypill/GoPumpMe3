@@ -25,15 +25,15 @@
         });
       }
     </script>
-    <script type="module" src="./src/main.tsx"></script>
+    
+    <!-- Choose one of these script options: -->
+    <!-- Option 1: For local development with Vite -->
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Option 2: For testing built files locally -->
+    <!-- <script type="module" src="./dist/assets/index-Gp39DOiv.js"></script> -->
   </body>
 </html>
-    </div>
-    <div id="root"></div>
-    <script>
-      function copyToClipboard() {
-        const text = document.getElementById('banner-text').innerText;
-        navigator.clipboard.writeText(text).then(() => {
           alert('Copied to clipboard!');
         }).catch(err => {
           console.error('Failed to copy text: ', err);
