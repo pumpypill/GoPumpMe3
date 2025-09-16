@@ -3,18 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <!-- Favicons for various devices/platforms -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/example.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/example.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/GoPumpMe3/assets/example.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/GoPumpMe3/assets/example.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoPumpMe</title>
     <meta name="description" content="Create your own meme by placing a hat or other overlay on any picture." />
   </head>
   <body>
-    <div class="banner" onclick="copyToClipboard()">
-      <strong id="banner-text">LIVE ON PUMP.FUN</strong>
-      <span class="copy-icon" aria-label="Copy to clipboard"></span>
-    </div>
     <div id="root"></div>
+    <!-- Vite will inject the correct bundle in production -->
+  </body>
+</html>
     <script>
       function copyToClipboard() {
         const text = document.getElementById('banner-text').innerText;
@@ -42,4 +41,5 @@
     </script>
     <script type="module" src="./src/main.tsx"></script>
   </body>
+</html>
 </html>
