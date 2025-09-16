@@ -1,8 +1,8 @@
 // Simple static file server for local testing
 
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
+import http from 'node:http';
+import fs from 'node:fs';
+import path from 'node:path';
 
 const PORT = 8080;
 const MIME_TYPES = {
@@ -24,7 +24,7 @@ const MIME_TYPES = {
 };
 
 http.createServer((req, res) => {
-  let filePath = '.' + decodeURIComponent(req.url.split('?')[0]);
+  let filePath = '.' + decodeURIComponent((req.url || '').split('?')[0]);
   if (filePath === './') filePath = './index.html';
 
   const ext = String(path.extname(filePath)).toLowerCase();

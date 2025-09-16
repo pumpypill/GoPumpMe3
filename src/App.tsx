@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
 
-// Filler AboutSection for GoPumpMe
 const AboutSection: React.FC = () => (
   <section id="about" className="container" style={{ textAlign: 'left' }}>
     <h2>About GoPumpMe</h2>
@@ -17,11 +16,18 @@ const AboutSection: React.FC = () => (
   </section>
 );
 
-// Filler ThemeSwitcher
 const ThemeSwitcher: React.FC<{ isDark: boolean; setIsDark: (v: boolean) => void }> = ({ isDark, setIsDark }) => (
   <div className="theme-switcher" style={{
-    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, padding: 16, maxWidth: '100%',
-    boxSizing: 'border-box', border: '1px solid #ccc', borderRadius: 8, background: isDark ? '#23272f' : '#f5f7fa',
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center', 
+    gap: 16, 
+    padding: 16, 
+    maxWidth: '100%',
+    boxSizing: 'border-box', 
+    border: '1px solid #ccc', 
+    borderRadius: 8, 
+    background: isDark ? '#23272f' : '#f5f7fa',
   }}>
     <h2 style={{ margin: 0 }}>Theme Switcher</h2>
     <p style={{ textAlign: 'center', margin: 0 }}>
@@ -51,14 +57,13 @@ const ThemeSwitcher: React.FC<{ isDark: boolean; setIsDark: (v: boolean) => void
   </div>
 );
 
-// Simple error boundary component
 class AppErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
   constructor(props: {children: React.ReactNode}) {
     super(props);
     this.state = { hasError: false };
   }
   static getDerivedStateFromError(error: Error) {
-    console.error("App error:", error); // Log error for debugging
+    console.error("App error:", error);
     return { hasError: true };
   }
   render() {
@@ -74,7 +79,7 @@ class AppErrorBoundary extends React.Component<{children: React.ReactNode}, {has
   }
 }
 
-const MemeGenerator: React.FC = () => {
+const App: React.FC = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -88,24 +93,22 @@ const MemeGenerator: React.FC = () => {
   return (
     <AppErrorBoundary>
       <div>
-        {/* --- HERO SECTION --- */}
-        <section
-          style={{
-            width: '100%',
-            maxWidth: 900,
-            margin: '0 auto 40px auto',
-            padding: '48px 24px 56px 24px',
-            borderRadius: 16,
-            background: 'linear-gradient(120deg, #fafdff 60%, #f0fff0 100%)',
-            boxShadow: '0 8px 48px 0 rgba(76,175,27,0.10), 0 1.5px 0 0 #e5e9f2',
-            position: 'relative',
-            overflow: 'hidden',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center',
-          }}
-        >
+        {/* Hero Section */}
+        <section style={{
+          width: '100%',
+          maxWidth: 900,
+          margin: '0 auto 40px auto',
+          padding: '48px 24px 56px 24px',
+          borderRadius: 16,
+          background: 'linear-gradient(120deg, #fafdff 60%, #f0fff0 100%)',
+          boxShadow: '0 8px 48px 0 rgba(76,175,27,0.10), 0 1.5px 0 0 #e5e9f2',
+          position: 'relative',
+          overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+        }}>
           <div
             style={{
               position: 'absolute',
@@ -203,28 +206,10 @@ const MemeGenerator: React.FC = () => {
             </a>
           </div>
         </section>
-        {/* --- END HERO SECTION --- */}
 
         <AboutSection />
 
-        {/* 4. Effect Variation: Subtle Hover Elevation */}
-        <div
-          className="container"
-          style={{
-            transition: 'box-shadow 0.2s, transform 0.2s',
-            cursor: 'pointer'
-          }}
-          onMouseEnter={e => {
-            (e.currentTarget as HTMLDivElement).style.boxShadow =
-              '0 8px 32px 0 rgba(76,175,27,0.18), 0 1.5px 0 0 #e5e9f2';
-            (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px) scale(1.01)';
-          }}
-          onMouseLeave={e => {
-            (e.currentTarget as HTMLDivElement).style.boxShadow =
-              '0 2px 16px 0 rgba(76,175,27,0.10), 0 8px 32px 0 rgba(109,212,0,0.10), 0 1.5px 0 0 #e5e9f2';
-            (e.currentTarget as HTMLDivElement).style.transform = 'none';
-          }}
-        >
+        <div className="container" id="how-it-works">
           <h2>How It Works</h2>
           <p>
             As GoPumpMe trading volume generates fees and creator rewards are earned, we donate them to GoFundMe campaigns chosen by the community.
@@ -238,4 +223,4 @@ const MemeGenerator: React.FC = () => {
   );
 };
 
-export default MemeGenerator;
+export default App;

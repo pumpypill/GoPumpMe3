@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-
-// Import assets directly with correct paths
 import logo from '../assets/example.png';
 import logoDark from '../assets/example_dark.png';
 import socialMediaIcon from '../assets/social-media.png';
@@ -42,7 +40,7 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <a href="/" aria-label="Go to homepage" className="logo-link">
+        <a href="./" aria-label="Go to homepage" className="logo-link">
           <img
             src={isDark ? logoDark : logo}
             alt="GoPumpMe Logo"
@@ -52,7 +50,7 @@ const Header: React.FC = () => {
         
         <div className="desktop-menu">
           <ul className="desktop-menu-items">
-            <li><a href="/">Home</a></li>
+            <li><a href="./">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
             <li><a href="#donations">Donations</a></li>
@@ -110,12 +108,12 @@ const Header: React.FC = () => {
       
       <nav
         ref={menuRef}
-        className={`menu${menuOpen ? " open" : ""}`}
+        className={`mobile-menu${menuOpen ? " open" : ""}`}
         id="mobile-menu"
         aria-hidden={!menuOpen}
       >
-        <ul className="menu-items">
-          <li><a href="/" onClick={() => setMenuOpen(false)}>Home</a></li>
+        <ul className="mobile-menu-items">
+          <li><a href="./" onClick={() => setMenuOpen(false)}>Home</a></li>
           <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
           <li><a href="#how-it-works" onClick={() => setMenuOpen(false)}>How It Works</a></li>
           <li><a href="#donations" onClick={() => setMenuOpen(false)}>Donations</a></li>
@@ -136,3 +134,4 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+

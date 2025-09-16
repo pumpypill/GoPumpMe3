@@ -1,4 +1,4 @@
-/* --- Color Scheme: Green Inspired (GoPumpMe) --- */
+/* --- GoPumpMe Color Scheme --- */
 :root {
   --primary-bg: #f5f7fa;
   --secondary-bg: #ffffff;
@@ -12,7 +12,6 @@
   --transition-speed: 0.3s;
 }
 
-/* Reset and base styles */
 body {
   background: var(--primary-bg);
   color: var(--text-main);
@@ -22,7 +21,6 @@ body {
   min-height: 100vh;
 }
 
-/* --- HEADER --- */
 .header {
   background: var(--secondary-bg);
   border-bottom: 1px solid var(--border-color);
@@ -38,11 +36,10 @@ body {
   z-index: 100;
 }
 
-/* New header-left container to group logo and menu */
 .header-left {
   display: flex;
   align-items: center;
-  gap: 20px; /* Space between logo and menu */
+  gap: 20px;
 }
 
 .logo-link {
@@ -51,7 +48,7 @@ body {
 }
 
 .logo-image {
-  height: 150px; /* Increased from 40px */
+  height: 150px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -61,14 +58,12 @@ body {
   transform: scale(1.05);
 }
 
-/* Header right section for button and social icon */
 .header-right {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-/* Trade on Axiom button */
 .trade-button {
   background: var(--primary-green);
   color: #fff;
@@ -94,7 +89,6 @@ body {
   transform: translateY(0);
 }
 
-/* Social Media Icon */
 .social-icon-link {
   display: flex;
   align-items: center;
@@ -112,7 +106,6 @@ body {
   transform: scale(1.15);
 }
 
-/* --- DESKTOP MENU STYLES --- */
 .desktop-menu {
   display: flex;
   align-items: center;
@@ -151,7 +144,6 @@ body {
   color: var(--primary-green);
 }
 
-/* Underline effect for desktop menu items */
 .desktop-menu-items li a::after {
   content: '';
   position: absolute;
@@ -170,12 +162,10 @@ body {
   transform-origin: left;
 }
 
-/* --- MOBILE MENU --- */
-.menu {
+.mobile-menu {
   display: none;
 }
 
-/* --- HAMBURGER MENU --- */
 .hamburger {
   display: none;
   background: none;
@@ -210,53 +200,18 @@ body {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* --- BANNER --- */
-.banner {
-  background: var(--primary-green, #4caf1b);
-  color: #fff;
-  text-align: center;
-  padding: 8px 0;
-  font-weight: 500;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  box-shadow:
-    0 2px 12px 0 rgba(76,175,27,0.18),
-    0 0 16px 0 #6dd40033;
-  position: relative;
-  z-index: 2;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-.copy-icon {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 8px;
-  background: url('./assets/copy-icon.png') no-repeat center center;
-  background-size: contain;
-}
-
-/* --- MAIN LAYOUT --- */
 .layout {
   max-width: 900px;
   margin: 40px auto 0 auto;
   padding: 0 16px;
 }
 
-/* --- CARD/SECTION STYLES --- */
-section, .container, .canvas-container, .about-meme, .external-buttons {
+section, .container, .theme-switcher {
   background: var(--secondary-bg);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 32px 24px;
   margin-bottom: 32px;
   border: 1px solid var(--border-color);
-  /* Enhanced rainbow-blue glow, more visible but soft */
   box-shadow:
     0 2px 12px 0 rgba(76,175,27,0.10),
     0 8px 32px 0 rgba(109,212,0,0.10),
@@ -264,77 +219,10 @@ section, .container, .canvas-container, .about-meme, .external-buttons {
     0 0 48px 0 rgba(200, 255, 0, 0.05),
     0 0 64px 0 rgba(109,212,0,0.05),
     0 1.5px 0 0 #e5e9f2;
-  background:
-    linear-gradient(135deg, #fafdff 0%, #f5f7fa 60%, #f0fff0 100%);
+  background: linear-gradient(135deg, #fafdff 0%, #f5f7fa 60%, #f0fff0 100%);
   position: relative;
-  /* Ensure stacking context for pseudo-element */
   z-index: 1;
   overflow: visible;
-}
-
-/* Rainbow border glow, now green gradient */
-section::before,
-.container::before,
-.canvas-container::before,
-.about-meme::before,
-.external-buttons::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  z-index: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background: linear-gradient(
-    120deg,
-    #6dd400 0%,
-    #4caf1b 25%,
-    #388e13 50%,
-    #b6ff7a 75%,
-    #a8ffb0 100%
-  );
-  opacity: 0.11; /* slightly more visible */
-  filter: blur(10px); /* smoother, more diffuse */
-}
-
-/* Specific container styles */
-.canvas-container {
-  background: linear-gradient(120deg, #fafdff 60%, #f0fff0 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  /* Ensure container doesn't overflow on small screens */
-  overflow-x: auto;
-}
-
-.about-meme {
-  background: linear-gradient(120deg, #fafdff 60%, #f0fff0 100%);
-  border-left: 5px solid #4caf1b;
-}
-
-.external-buttons {
-  background: linear-gradient(135deg, #fafdff 0%, #f0fff0 100%);
-  border-left: 5px solid #6dd400;
-  box-shadow:
-    0 2px 12px 0 rgba(76,175,27,0.10),
-    0 8px 32px 0 rgba(109,212,0,0.10),
-    0 0 32px 0 rgba(127,255,0,0.06),
-    0 1.5px 0 0 #e5e9f2;
-}
-
-/* Canvas styles */
-.canvas-container canvas {
-  width: 100% !important;
-  height: auto !important;
-  max-width: 700px;
-  max-height: 700px;
-  display: block;
-  margin: 0 auto;
-  background: #222;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
-  /* Add responsive min-width for very small screens */
-  min-width: 220px;
 }
 
 h1, h2, h3 {
@@ -353,8 +241,7 @@ p {
   line-height: 1.6;
 }
 
-/* --- BUTTONS --- */
-button, .cta-btn, label[for="file-upload"] {
+button, .cta-btn {
   background: var(--primary-green);
   color: #fff;
   border: none;
@@ -370,13 +257,13 @@ button, .cta-btn, label[for="file-upload"] {
   transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
 }
 
-button:hover, .cta-btn:hover, label[for="file-upload"]:hover {
+button:hover, .cta-btn:hover {
   background: linear-gradient(90deg, var(--accent-green) 40%, var(--primary-green) 100%);
   box-shadow: 0 4px 16px 0 rgba(76,175,27,0.16);
   transform: translateY(-1px) scale(1.02);
 }
 
-button:active, .cta-btn:active, label[for="file-upload"]:active {
+button:active, .cta-btn:active {
   transform: scale(0.98);
 }
 
@@ -386,83 +273,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* --- FILE INPUT --- */
-input[type="file"] {
-  display: none;
-}
-
-/* --- RANGE INPUT --- */
-input[type="range"] {
-  width: 100%;
-  margin: 12px 0;
-  accent-color: var(--primary-green);
-  background: linear-gradient(90deg, #4caf1b 0%, #6dd400 100%);
-  box-shadow: 0 1px 4px 0 rgba(76,175,27,0.07);
-  height: 6px;
-  border-radius: 3px;
-  outline: none;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  background: linear-gradient(135deg, #6dd400 0%, #4caf1b 100%);
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(76,175,27,0.13);
-  border: 2px solid #fff;
-  cursor: pointer;
-  transition: box-shadow 0.18s;
-}
-
-input[type="range"]:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 4px #6dd40033;
-}
-
-input[type="range"]::-moz-range-thumb {
-  width: 18px;
-  height: 18px;
-  background: linear-gradient(135deg, #6dd400 0%, #4caf1b 100%);
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(76,175,27,0.13);
-  border: 2px solid #fff;
-  cursor: pointer;
-  transition: box-shadow 0.18s;
-}
-
-input[type="range"]:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 4px #6dd40033;
-}
-
-input[type="range"]::-ms-thumb {
-  width: 18px;
-  height: 18px;
-  background: linear-gradient(135deg, #6dd400 0%, #4caf1b 100%);
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(76,175,27,0.13);
-  border: 2px solid #fff;
-  cursor: pointer;
-  transition: box-shadow 0.18s;
-}
-
-input[type="range"]:focus::-ms-thumb {
-  box-shadow: 0 0 0 4px #6dd40033;
-}
-
-input[type="range"]::-ms-fill-lower {
-  background: transparent;
-}
-
-input[type="range"]::-ms-fill-upper {
-  background: transparent;
-}
-
-input[type="range"]:focus {
-  outline: none;
-}
-
-/* --- FOOTER --- */
 .footer {
   background: var(--secondary-bg);
   border-top: 1px solid var(--border-color);
@@ -473,56 +283,26 @@ input[type="range"]:focus {
   margin-top: 40px;
 }
 
-/* --- TIP TEXT: Softer, More Modern --- */
-.tip {
-  color: #7b61ff;
-  text-align: center;
-  margin-top: 24px;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-}
-
-/* --- MOBILE MENU/RESPONSIVE STYLES --- */
-/* Unified responsive menu styles */
-.menu {
-  transition: transform var(--transition-speed) cubic-bezier(0.4,0,0.2,1), opacity 0.2s, max-height 0.25s;
-  opacity: 0;
-}
-
-.menu.open {
-  opacity: 1;
-}
-
-/* Ensure last container does not have extra margin */
 .container:last-child,
-.about-meme:last-child,
-.canvas-container:last-child,
 .theme-switcher:last-child,
 section:last-child {
   margin-bottom: 0;
 }
 
-/* --- RESPONSIVE STYLES --- */
 @media (min-width: 1200px) {
-  .container, .about-meme, .canvas-container {
+  .container {
     padding: 40px 36px;
   }
 }
 
 @media (max-width: 700px) {
-  /* Header and menu styles */
   .header {
     padding: 0 16px;
     height: 60px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
   }
   
   .logo-image {
-    height: 45px; /* Adjusted from 40px for mobile */
+    height: 45px;
     margin: 0 0 0 12px;
   }
   
@@ -533,15 +313,10 @@ section:last-child {
     justify-content: center;
     margin: 0 8px 0 0;
     order: 2;
-    background: none;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    padding: 0;
     z-index: 20;
   }
   
-  .menu {
+  .mobile-menu {
     position: fixed;
     top: 0;
     right: 0;
@@ -557,123 +332,66 @@ section:last-child {
     box-shadow: -5px 0 25px rgba(0,0,0,0.15);
     transform: translateX(100%);
     z-index: 90;
+    transition: transform var(--transition-speed) cubic-bezier(0.4,0,0.2,1);
   }
   
-  .menu.open {
+  .mobile-menu.open {
     transform: translateX(0);
   }
   
-  .menu-items {
+  .mobile-menu-items {
     flex-direction: column;
     gap: 0;
     width: 100%;
-    height: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
   
-  .menu-items li {
+  .mobile-menu-items li {
     width: 100%;
-    height: auto;
     border-bottom: 1px solid var(--border-color);
   }
   
-  .menu-items li a {
+  .mobile-menu-items li a {
     padding: 20px 24px;
     width: 100%;
-    justify-content: flex-start;
+    display: block;
     font-size: 1.1rem;
+    color: var(--secondary-green);
+    text-decoration: none;
+    transition: color 0.2s;
   }
   
-  .menu-items li a::after {
-    bottom: auto;
-    left: 0;
-    height: 100%;
-    width: 4px;
-    transform: scaleY(0);
+  .mobile-menu-items li a:hover {
+    color: var(--primary-green);
   }
   
-  .menu-items li a:hover::after {
-    transform: scaleY(1);
-  }
-  
-  /* Body overlay when menu is open */
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 80;
-    opacity: 0;
-    visibility: hidden;
-    transition: 
-      opacity var(--transition-speed),
-      visibility var(--transition-speed);
-  }
-  
-  body:has(.menu.open)::after {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  /* Container styles for mobile */
   .container,
-  .about-meme,
-  .canvas-container,
   .theme-switcher,
   section {
-    padding: 16px 6px;
-    margin-bottom: 18px;
+    padding: 16px;
+    margin: 8px;
     border-radius: 6px;
-    margin-left: 8px;
-    margin-right: 8px;
   }
   
-  /* Form fields on mobile */
-  .container input[type="text"],
-  .container button,
-  .container label[for="file-upload"] {
-    width: 100% !important;
-    box-sizing: border-box;
-    font-size: 1rem;
-    min-width: 0;
-    max-width: 100%;
-  }
-  
-  .container input[type="text"] {
-    margin-bottom: 10px;
-  }
-  
-  /* Footer on mobile */
   .footer {
     padding: 16px;
     font-size: 0.9rem;
   }
   
-  /* AboutMeme and ThemeSwitcher on mobile */
-  .about-meme,
-  .theme-switcher {
-    padding: 16px;
-    margin: 8px;
-    font-size: 0.9rem;
-  }
-  
-  /* Header right section */
   .header-right {
     gap: 10px;
   }
   
-  /* Trade button adjustments for mobile */
   .trade-button {
     padding: 6px 12px;
     font-size: 0.8rem;
   }
   
-  /* Social Media Icon adjustments for mobile */
   .social-icon-link {
     margin-right: 12px;
-    z-index: 21; /* Ensure it's above the mobile menu */
+    z-index: 21;
   }
   
   .social-icon {
@@ -681,37 +399,16 @@ section:last-child {
   }
 }
 
-@media (max-width: 500px) {
-  .canvas-container {
-    padding: 8px;
-    margin: 0 auto;
-  }
-}
-
-/* Hide hamburger on desktop */
 @media (min-width: 701px) {
   .hamburger {
     display: none !important;
   }
   
-  .menu {
-    display: flex !important;
-    position: static;
-    background: none;
-    box-shadow: none;
-  }
-  
-  .menu-items {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    gap: 24px;
+  .mobile-menu {
+    display: none;
   }
 }
 
-/* --- DARK THEME STYLES --- */
 body.dark {
   --primary-bg: #181c22;
   --secondary-bg: #23272f;
@@ -726,23 +423,12 @@ body.dark {
 }
 
 body.dark .header {
-  background: var(--secondary-bg);
   background: linear-gradient(90deg, #23272f 70%, #1a1d22 100%);
-}
-
-body.dark .banner {
-  background: var(--primary-green);
-  color: #fff;
-  box-shadow:
-    0 2px 12px 0 rgba(76,175,27,0.28),
-    0 0 16px 0 #6dd40055;
 }
 
 body.dark section,
 body.dark .container,
-body.dark .canvas-container,
-body.dark .about-meme,
-body.dark .external-buttons {
+body.dark .theme-switcher {
   background: linear-gradient(135deg, #23272f 0%, #181c22 100%);
   border: 1px solid var(--border-color);
   color: var(--text-main);
@@ -753,38 +439,16 @@ body.dark h1, body.dark h2, body.dark h3 {
 }
 
 body.dark button,
-body.dark .cta-btn,
-body.dark label[for="file-upload"] {
+body.dark .cta-btn {
   background: linear-gradient(90deg, #4caf1b 60%, #6dd400 100%);
   color: #fff;
   box-shadow: 0 2px 8px 0 rgba(76,175,27,0.18), 0 1.5px 0 0 #23272f;
 }
 
 body.dark button:hover,
-body.dark .cta-btn:hover,
-body.dark label[for="file-upload"]:hover {
+body.dark .cta-btn:hover {
   background: linear-gradient(90deg, #6dd400 40%, #4caf1b 100%);
   box-shadow: 0 4px 16px 0 rgba(76,175,27,0.28);
-}
-
-body.dark input[type="range"] {
-  background: linear-gradient(90deg, #4caf1b 0%, #6dd400 100%);
-}
-
-body.dark button:focus,
-body.dark .cta-btn:focus,
-body.dark label[for="file-upload"]:focus,
-body.dark .hamburger:focus,
-body.dark .menu ul li a:focus {
-  background: #23272f;
-}
-
-body.dark .about-meme {
-  border-left: 5px solid #4caf1b;
-}
-
-body.dark .external-buttons {
-  border-left: 5px solid #6dd400;
 }
 
 body.dark .trade-button {
@@ -798,31 +462,10 @@ body.dark .trade-button:hover {
   box-shadow: 0 4px 16px 0 rgba(76,175,27,0.28);
 }
 
-/* --- Accessibility: Focus Styles --- */
 button:focus,
 .cta-btn:focus,
-label[for="file-upload"]:focus,
-.hamburger:focus,
-.menu ul li a:focus {
+.hamburger:focus {
   outline: 2px solid var(--primary-green);
   outline-offset: 2px;
   box-shadow: 0 0 0 3px #6dd40033;
-  background: #eaf6ff;
 }
-
-/* Remove background for dark mode focus */
-body.dark button:focus,
-body.dark .cta-btn:focus,
-body.dark label[for="file-upload"]:focus,
-body.dark .hamburger:focus,
-body.dark .menu ul li a:focus {
-  background: #23272f;
-}
-
-/* --- CUSTOMIZATION NOTES ---
-- Change colors above to match your brand.
-- Replace background images or remove them as needed.
-- Update font-family for your preferred style.
-- Adjust border-radius, box-shadow, and spacing for your look.
-- All class names are generic and reusable for any meme or token project.
-*/

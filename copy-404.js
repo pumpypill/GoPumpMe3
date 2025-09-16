@@ -1,17 +1,20 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
 
 try {
-  if (fs.existsSync('./404.html')) {
-    if (!fs.existsSync('./dist')) {
-      fs.mkdirSync('./dist', { recursive: true });
+  const src = path.resolve('./public/404.html');
+  const destDir = path.resolve('./dist');
+  const dest = path.join(destDir, '404.html');
+
+  if (fs.existsSync(src)) {
+    if (!fs.existsSync(destDir)) {
+      fs.mkdirSync(destDir, { recursive: true });
     }
-    fs.copyFileSync('./404.html', './dist/404.html');
-    console.log('404.html copied successfully');
+    fs.copyFileSync(src, dest);
+    console.log('404.html copied to dist successfully');
   } else {
-    console.log('404.html not found, skipping');
+    console.log('public/404.html not found, skipping');
   }
 } catch (err) {
-  console.error('Error copying file:', err);
+  console.error('Error copying 404.html:', err);
 }
-console.log('404.html copied to dist folder successfully');
