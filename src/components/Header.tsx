@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// Import assets directly to avoid potential path issues
+// Import assets directly with correct paths
 import logo from '../assets/example.png';
 import logoDark from '../assets/example_dark.png';
-import hamburgerIcon from '../assets/hamburger.png';
 import socialMediaIcon from '../assets/social-media.png';
 
 const Header: React.FC = () => {
@@ -111,11 +110,11 @@ const Header: React.FC = () => {
       
       <nav
         ref={menuRef}
-        className={`mobile-menu${menuOpen ? " open" : ""}`}
+        className={`menu${menuOpen ? " open" : ""}`}
         id="mobile-menu"
         aria-hidden={!menuOpen}
       >
-        <ul className="mobile-menu-items">
+        <ul className="menu-items">
           <li><a href="/" onClick={() => setMenuOpen(false)}>Home</a></li>
           <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
           <li><a href="#how-it-works" onClick={() => setMenuOpen(false)}>How It Works</a></li>
