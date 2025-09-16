@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/GoPumpMe3/', // Set to your repo name for GitHub Pages
+  base: '/', // Set to root for custom domain
   plugins: [react()],
   build: {
     outDir: 'dist',
