@@ -35,7 +35,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Header />
       <div className="layout">
         <App />
-        {/* Removed About Meme Generator section */}
       </div>
       <Footer />
     </RootErrorBoundary>
