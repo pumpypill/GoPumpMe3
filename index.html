@@ -11,11 +11,11 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./src/main.js"></script>
-    <script type="module" src="./src/assets/index.js"></script>
+    <!-- Only load the main entry point for Vite/React -->
     <script type="module" src="./src/main.tsx"></script>
-    <!-- Option 2: For testing built files locally -->
-    <!-- <script type="module" src="./dist/assets/index-Gp39DOiv.js"></script> -->
+    <!-- Remove all other <script type="module" ...> tags -->
+  </body>
+</html>
   </body>
 </html>
           console.error('Failed to copy text: ', err);
