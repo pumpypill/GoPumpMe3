@@ -1,8 +1,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Set base path for GitHub Pages deployment
+// Generic Vite config for meme/token template.
+// Update outDir, input, or base as needed for your deployment.
 export default defineConfig({
   plugins: [react()],
-  base: '/steve-hat-gen/' // Replace with your repository name
+  build: {
+    outDir: 'dist', // Output directory for build
+    rollupOptions: {
+      input: './index.html', // Main entry point
+    },
+  },
+  base: './', // Use relative paths for all assets
 });

@@ -2,13 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- Favicons for various devices/platforms -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/example-vRi2sy8p.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/example-vRi2sy8p.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scumbag Steve Hat Tool</title>
-    <script type="module" crossorigin src="/steve-hat-gen/assets/index-C0W0w8wb.js"></script>
-    <link rel="stylesheet" crossorigin href="/steve-hat-gen/assets/index-DKH01n_3.css">
+    <title>GoPumpMe</title>
+    <meta name="description" content="Create your own meme by placing a hat or other overlay on any picture." />
+    <style>
+      .banner {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
+      .copy-icon {
+        width: 16px;
+        height: 16px;
+        background: url('./assets/copy-icon-8yPggIa9.png') no-repeat center center;
+        background-size: contain;
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-CAsjoAC7.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-k5cQJsLS.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div class="banner" onclick="copyToClipboard()">
+      <strong id="banner-text">LIVE ON PUMP.FUN</strong>
+      <span class="copy-icon" aria-label="Copy to clipboard"></span>
+    </div>
+    <div id="root"></div>
+    <script>
+      function copyToClipboard() {
+        const text = document.getElementById('banner-text').innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert('Copied to clipboard!');
+        }).catch(err => {
+          console.error('Failed to copy text: ', err);
+        });
+      }
+    </script>
   </body>
 </html>

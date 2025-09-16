@@ -2,39 +2,42 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './styles.css';
-import AboutScumbagSteve from './components/AboutScumbagSteve';
-import logo from './assets/logo.png';
+import './menuAnimations.css'; // Import menu animations
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-const Header: React.FC = () => (
-  <header className="header">
-    <a href="/" aria-label="Go to homepage">
-      <img src={logo} alt="Scumbag Steve Logo" style={{ height: 64, width: 64 }} />
-    </a>
-    <nav className="menu">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="#about-scumbag-steve">About</a></li>
-        <li><a href="#steve-memecoin">Memecoin</a></li>
-        <li><a href="#who-is-scumbag-steve">Meet Steve</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-);
-
-const Footer: React.FC = () => (
-  <footer className="footer">
-    <p>© {new Date().getFullYear()} STEVE on Bags App. Built in collaboration with Blake Boston.</p>
-  </footer>
-);
+// Error boundary for the root
+class RootErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
+  constructor(props: {children: React.ReactNode}) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError(error: Error) {
+    console.error("Root error:", error); // Log error for debugging
+    return { hasError: true };
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ padding: 32, color: "#ff4d4f", textAlign: "center" }}>
+          <h2>Something went wrong.</h2>
+          <p>Try refreshing the page or restarting the app.</p>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Header />
-    <div className="layout">
-      <App />
-    </div>
-    <AboutScumbagSteve />
-    <Footer />
+    <RootErrorBoundary>
+      <Header />
+      <div className="layout">
+        <App />
+        {/* Removed About Meme Generator section */}
+      </div>
+      <Footer />
+    </RootErrorBoundary>
   </React.StrictMode>
 );

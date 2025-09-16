@@ -1,13 +1,18 @@
 {
-  "name": "scumbag-steve-hat-pfp-tool",
+  "name": "meme-generator-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://i2gucci.github.io/steve-hat-gen",
+  "homepage": "https://pumpypill.github.io/GoPumpMe",
   "scripts": {
     "dev": "vite",
+    "dev:template": "vite --port 5174",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write .",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "react": "^18.2.0",

@@ -2,12 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- Favicons for various devices/platforms -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/example.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/example.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scumbag Steve Hat Tool</title>
+    <title>GoPumpMe</title>
+    <meta name="description" content="Create your own meme by placing a hat or other overlay on any picture." />
+    <style>
+      .banner {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
+      .copy-icon {
+        width: 16px;
+        height: 16px;
+        background: url('./src/assets/copy-icon.png') no-repeat center center;
+        background-size: contain;
+      }
+    </style>
   </head>
   <body>
+    <div class="banner" onclick="copyToClipboard()">
+      <strong id="banner-text">LIVE ON PUMP.FUN</strong>
+      <span class="copy-icon" aria-label="Copy to clipboard"></span>
+    </div>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      function copyToClipboard() {
+        const text = document.getElementById('banner-text').innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert('Copied to clipboard!');
+        }).catch(err => {
+          console.error('Failed to copy text: ', err);
+        });
+      }
+    </script>
+    <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
