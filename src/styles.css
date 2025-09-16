@@ -237,7 +237,7 @@ body {
   display: inline-block;
   vertical-align: middle;
   margin-left: 8px;
-  background: url('./copy-icon.png') no-repeat center center;
+  background: url('/GoPumpMe/assets/copy-icon.png') no-repeat center center;
   background-size: contain;
 }
 
