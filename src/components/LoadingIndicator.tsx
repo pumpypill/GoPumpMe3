@@ -17,7 +17,7 @@ const LoadingIndicator: React.FC = () => (
         width: 32,
         height: 32,
         border: "4px solid #e0e0e0",
-        borderTop: "4px solid #0076ce",
+        borderTop: "4px solid var(--primary-green, #4caf1b)",
         borderRadius: "50%",
         animation: "spin 1s linear infinite"
       }}
