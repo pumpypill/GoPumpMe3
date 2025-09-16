@@ -9,5 +9,6 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist', // Output directory for production build
+    assetsDir: 'assets', // Ensure assets are placed in the correct folder
   },
 });
