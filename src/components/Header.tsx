@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+
+// Import assets directly to avoid potential path issues
 import logo from '../assets/example.png';
 import logoDark from '../assets/example_dark.png';
 import hamburgerIcon from '../assets/hamburger.png';
@@ -135,4 +137,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-

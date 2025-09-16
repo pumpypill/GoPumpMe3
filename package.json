@@ -3,25 +3,26 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "/",
+  "homepage": "./",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "serve": "node local-server.js",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist",
+    "copy-404": "node copy-404.js"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^24.5.0",
+    "@types/node": "^20.10.5",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.0",
-    "gh-pages": "^5.0.0",
-    "typescript": "^5.0.2",
-    "vite": "^7.1.5"
+    "@vitejs/plugin-react": "^4.2.1",
+    "gh-pages": "^6.1.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10"
   }
 }

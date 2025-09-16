@@ -1,5 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState, useEffect, useRef } from 'react';
+// Import assets directly to avoid potential path issues
 import logo from '../assets/example.png';
 import logoDark from '../assets/example_dark.png';
 import socialMediaIcon from '../assets/social-media.png';

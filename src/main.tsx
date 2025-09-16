@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './styles.css';
-import './menuAnimations.css'; // Import menu animations
+import './menuAnimations.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -13,7 +13,7 @@ class RootErrorBoundary extends React.Component<{children: React.ReactNode}, {ha
     this.state = { hasError: false };
   }
   static getDerivedStateFromError(error: Error) {
-    console.error("Root error:", error); // Log error for debugging
+    console.error("Root error:", error);
     return { hasError: true };
   }
   render() {
@@ -29,21 +29,11 @@ class RootErrorBoundary extends React.Component<{children: React.ReactNode}, {ha
   }
 }
 
-// Suppress React DevTools message in the console
-if (process.env.NODE_ENV === 'development') {
-  const originalConsoleInfo = console.info;
-  console.info = (...args) => {
-    if (
-      typeof args[0] === 'string' &&
-      args[0].includes('Download the React DevTools')
-    ) {
-      return;
-    }
-    originalConsoleInfo(...args);
-  };
-}
+// Create root element and render app
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Failed to find the root element');
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <RootErrorBoundary>
       <Header />

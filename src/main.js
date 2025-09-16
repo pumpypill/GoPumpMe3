@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './styles.css';
-import './menuAnimations.css'; // Import menu animations
+import './menuAnimations.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 // Error boundary for the root
@@ -13,7 +13,7 @@ class RootErrorBoundary extends React.Component {
         this.state = { hasError: false };
     }
     static getDerivedStateFromError(error) {
-        console.error("Root error:", error); // Log error for debugging
+        console.error("Root error:", error);
         return { hasError: true };
     }
     render() {
@@ -23,4 +23,8 @@ class RootErrorBoundary extends React.Component {
         return this.props.children;
     }
 }
-ReactDOM.createRoot(document.getElementById('root')).render(_jsx(React.StrictMode, { children: _jsxs(RootErrorBoundary, { children: [_jsx(Header, {}), _jsx("div", { className: "layout", children: _jsx(App, {}) }), _jsx(Footer, {})] }) }));
+// Create root element and render app
+const rootElement = document.getElementById('root');
+if (!rootElement)
+    throw new Error('Failed to find the root element');
+ReactDOM.createRoot(rootElement).render(_jsx(React.StrictMode, { children: _jsxs(RootErrorBoundary, { children: [_jsx(Header, {}), _jsx("div", { className: "layout", children: _jsx(App, {}) }), _jsx(Footer, {})] }) }));
