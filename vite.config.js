@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/', // Changed from '/GoPumpMe3/' to '/'
+  base: '/GoPumpMe3/', // Set to your repo name for GitHub Pages
   plugins: [react()],
   build: {
     outDir: 'dist',

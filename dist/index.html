@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <!-- Favicons for various devices/platforms -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/example-8d6f0bde.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/example-8d6f0bde.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/GoPumpMe3/assets/example-8d6f0bde.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/GoPumpMe3/assets/example-8d6f0bde.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoPumpMe</title>
     <meta name="description" content="GoPumpMe - Pump for Good. GoFundMe meets Pump.fun" />
-    <script type="module" crossorigin src="/assets/index-8271344e.js"></script>
-    <link rel="stylesheet" href="/assets/index-2ecb9a54.css">
+    <script type="module" crossorigin src="/GoPumpMe3/assets/index-3a9c47ca.js"></script>
+    <link rel="stylesheet" href="/GoPumpMe3/assets/index-2b4c924d.css">
   </head>
   <body>
     <div id="root"></div>
-    <!-- Only load the main entry point for Vite/React -->
-    
-    <!-- Remove all other <script type="module" ...> tags -->
-  </body>
-</html>
+    <!-- For local dev, Vite will inject the correct script. For static hosting, after build, this will be replaced. -->
+    <!-- Remove direct references to src/main.tsx and src/assets/index.js -->
+    <!-- After build, ensure the script tag points to the built JS, e.g.: -->
+    <!-- <script type="module" src="/assets/index-xxxx.js"></script> -->
+    <!-- (Vite will handle this automatically if you use the default setup) -->
   </body>
 </html>
           console.error('Failed to copy text: ', err);
