@@ -70,7 +70,7 @@ const Header: React.FC = () => {
       <div className="header-right">
         {/* Trade on Axiom Button */}
         <a 
-          href="https://www.axiom.com/trade" 
+          href="https://axiom.trade/@powders" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="trade-button"
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
         
         {/* Social Media Icon */}
         <a 
-          href="https://twitter.com/yourhandle" 
+          href="https://x.com/gopumpmedotfun" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="social-icon-link"
