@@ -56,6 +56,8 @@ const ContractBanner: React.FC = () => {
           <rect x="6" y="6" width="9" height="11" rx="2" stroke="#000" strokeWidth="2" fill="#fff" />
           <rect x="3" y="3" width="9" height="11" rx="2" stroke="#000" strokeWidth="2" fill="#fff" />
         </svg>
+        {/* Ensure the copy icon is correctly referenced */}
+        <img src="../assets/copy-icon.png" alt="Copy Icon" />
         {copied && (
           <span style={{ marginLeft: 6, color: '#0f0', fontWeight: 700, fontSize: 13 }}>Copied!</span>
         )}

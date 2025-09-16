@@ -29,6 +29,20 @@ class RootErrorBoundary extends React.Component<{children: React.ReactNode}, {ha
   }
 }
 
+// Suppress React DevTools message in the console
+if (process.env.NODE_ENV === 'development') {
+  const originalConsoleInfo = console.info;
+  console.info = (...args) => {
+    if (
+      typeof args[0] === 'string' &&
+      args[0].includes('Download the React DevTools')
+    ) {
+      return;
+    }
+    originalConsoleInfo(...args);
+  };
+}
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <RootErrorBoundary>
