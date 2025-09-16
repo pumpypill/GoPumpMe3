@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "/",
+  "homepage": "/GoPumpMe3/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -22,6 +22,6 @@
     "@vitejs/plugin-react": "^4.0.0",
     "gh-pages": "^5.0.0",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^7.1.5"
   }
 }
