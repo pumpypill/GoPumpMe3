@@ -1,0 +1,6 @@
+# ...existing code...
+.cache
+.gh-pages
+node_modules/
+dist/
+# ...existing code...
